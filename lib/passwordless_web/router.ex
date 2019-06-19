@@ -22,7 +22,7 @@ defmodule PasswordlessWeb.Router do
 
     get "/", HomeController, :index
     resources "/users", UserController, only: [:create, :new]
-    resources "/login-requests", LoginRequestController, only: [:create, :new]
+    resources "/login-requests", LoginRequestController, only: [:create, :new, :show], param: "token"
   end
 
   # Other scopes may use custom stacks.

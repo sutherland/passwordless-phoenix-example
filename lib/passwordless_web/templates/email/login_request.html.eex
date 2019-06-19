@@ -2,4 +2,4 @@
 
 <p>Use the link below to log in to your Passwordless account. <strong>This link expires in 15 minutes.</strong></p>
 
-<p><%= link "Log in to Passwordless", to: "#todo" %></p>
+<p><%= link "Log in to Passwordless", to: Routes.login_request_url(PasswordlessWeb.Endpoint, :show, @token) %></p>
