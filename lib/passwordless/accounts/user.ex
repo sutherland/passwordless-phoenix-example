@@ -3,6 +3,7 @@ defmodule Passwordless.Accounts.User do
   import Ecto.Changeset
 
   alias Passwordless.Accounts.LoginRequest
+  alias Passwordless.Accounts.Session
 
   schema "users" do
     field :email, :string
@@ -10,6 +11,7 @@ defmodule Passwordless.Accounts.User do
     timestamps()
 
     has_one :login_request, LoginRequest
+    has_many :sessions, Session
   end
 
   def changeset(user, attrs) do
