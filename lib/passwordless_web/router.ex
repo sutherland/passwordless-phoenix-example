@@ -17,6 +17,7 @@ defmodule PasswordlessWeb.Router do
     pipe_through :browser
 
     get "/", HomeController, :index
+    resources "/users", UserController, only: [:create, :new]
   end
 
   # Other scopes may use custom stacks.
