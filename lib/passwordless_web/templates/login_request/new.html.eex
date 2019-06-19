@@ -1,0 +1,10 @@
+<h1>Log in</h1>
+
+<%= form_for @conn, Routes.login_request_path(@conn, :create), [as: :login_request], fn f -> %>
+  <%= label f, :email %>
+  <%= text_input f, :email %>
+
+  <%= submit "Continue" %>
+<% end %>
+
+<%= link "Back to home", to: Routes.home_path(@conn, :index) %>
