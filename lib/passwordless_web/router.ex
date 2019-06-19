@@ -13,6 +13,10 @@ defmodule PasswordlessWeb.Router do
     plug :accepts, ["json"]
   end
 
+  if Mix.env == :dev do
+    forward "/sent-emails", Bamboo.SentEmailViewerPlug
+  end
+
   scope "/", PasswordlessWeb do
     pipe_through :browser
 

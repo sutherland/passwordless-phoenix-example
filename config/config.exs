@@ -7,6 +7,8 @@
 # General application configuration
 use Mix.Config
 
+config :passwordless, Passwordless.Mailer, adapter: Bamboo.LocalAdapter
+
 config :passwordless,
   ecto_repos: [Passwordless.Repo]
 
