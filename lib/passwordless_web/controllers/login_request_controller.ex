@@ -29,9 +29,11 @@ defmodule PasswordlessWeb.LoginRequestController do
 
   def show(conn, %{"token" => token}) do
     case LoginRequests.redeem(token) do
-      {:ok, _changes} ->
+      {:ok, %{session: session}} ->
         conn
         |> put_flash(:info, "Logged in successfully.")
+        |> put_session(:session_id, session.id)
+        |> configure_session(renew: true)
         |> redirect(to: Routes.home_path(conn, :index))
 
       {:error, :expired} ->

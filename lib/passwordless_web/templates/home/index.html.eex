@@ -1,4 +1,8 @@
 <h1>Home</h1>
 
-<%= link "Sign up", to: Routes.user_path(@conn, :new) %> or
-<%= link "Log in", to: Routes.login_request_path(@conn, :new) %>
+<%= if logged_in?(@conn) do %>
+  <%= link "Log out", to: "#todo" %>
+<% else %>
+  <%= link "Sign up", to: Routes.user_path(@conn, :new) %> or
+  <%= link "Log in", to: Routes.login_request_path(@conn, :new) %>
+<% end %>

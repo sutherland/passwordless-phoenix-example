@@ -41,6 +41,7 @@ defmodule PasswordlessWeb do
 
       import PasswordlessWeb.ErrorHelpers
       import PasswordlessWeb.Gettext
+      import PasswordlessWeb.AuthHelper
       alias PasswordlessWeb.Router.Helpers, as: Routes
     end
   end
