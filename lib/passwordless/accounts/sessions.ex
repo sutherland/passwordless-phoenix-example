@@ -5,4 +5,8 @@ defmodule Passwordless.Accounts.Sessions do
   def get(id) do
     Repo.get(Session, id)
   end
+
+  def delete(session) do
+    Repo.delete(session)
+  end
 end

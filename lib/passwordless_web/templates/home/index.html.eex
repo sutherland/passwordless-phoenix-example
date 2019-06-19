@@ -1,7 +1,7 @@
 <h1>Home</h1>
 
 <%= if logged_in?(@conn) do %>
-  <%= link "Log out", to: "#todo" %>
+  <%= link "Log out", to: Routes.session_path(@conn, :delete), method: :delete %>
 <% else %>
   <%= link "Sign up", to: Routes.user_path(@conn, :new) %> or
   <%= link "Log in", to: Routes.login_request_path(@conn, :new) %>
