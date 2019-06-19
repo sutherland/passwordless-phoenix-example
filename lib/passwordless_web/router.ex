@@ -16,7 +16,7 @@ defmodule PasswordlessWeb.Router do
   scope "/", PasswordlessWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", HomeController, :index
   end
 
   # Other scopes may use custom stacks.
