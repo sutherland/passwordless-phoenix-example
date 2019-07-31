@@ -1,4 +1,8 @@
-# Passwordless
+# Passwordless Authentication from Scratch with Phoenix
+
+Find the complete tutorial here: https://www.jony.ca/passwordless-authentication-from-scratch-with-phoenix
+
+---
 
 To start your Phoenix server:
 
